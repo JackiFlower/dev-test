@@ -5,7 +5,6 @@
   "projects": {
     "scalarr-dev-test": {
       "root": "",
-      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {
@@ -27,9 +26,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/sass/now-ui-kit.scss",
+              "src/assets/css/demo.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/rellax/rellax.js"
+            ]
           },
           "configurations": {
             "production": {
