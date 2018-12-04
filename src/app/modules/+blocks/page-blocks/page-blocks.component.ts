@@ -1,9 +1,9 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ArticlesService } from '../../shared/sirvices/articles.service';
-import { BooksService } from '../../shared/sirvices/books.service';
-import { ProductsService } from '../../shared/sirvices/products.service';
+import { ArticlesService } from '../../shared/services/articles.service';
+import { BooksService } from '../../shared/services/books.service';
+import { ProductsService } from '../../shared/services/products.service';
 
 @Component({
   selector: 'page-blocks',

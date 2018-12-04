@@ -1,5 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SharedTestingModule } from '../../testing/shared-testing.module';
 import { Page404Component } from './page-404.component';
 
 describe('Page404Component', () => {
@@ -8,7 +9,9 @@ describe('Page404Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Page404Component ]
+      declarations: [ Page404Component ],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [SharedTestingModule]
     })
     .compileComponents();
   }));

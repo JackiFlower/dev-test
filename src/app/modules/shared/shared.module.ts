@@ -7,11 +7,11 @@ import { ElementErrorComponent } from './components/element-error/element-error.
 import { ElementLoadingComponent } from './components/element-loading/element-loading.component';
 import { ElementNavigationComponent } from './components/element-navigation/element-navigation.component';
 import { SectionCardsComponent } from './components/section-cards/section-cards.component';
-import { ArticlesService } from './sirvices/articles.service';
-import { BooksService } from './sirvices/books.service';
-import { HelpersService } from './sirvices/helpers.service';
-import { ProductsService } from './sirvices/products.service';
-import { RequestsService } from './sirvices/requests.service';
+import { ArticlesService } from './services/articles.service';
+import { BooksService } from './services/books.service';
+import { HelpersService } from './services/helpers.service';
+import { ProductsService } from './services/products.service';
+import { RequestsService } from './services/requests.service';
 
 @NgModule({
   imports: [

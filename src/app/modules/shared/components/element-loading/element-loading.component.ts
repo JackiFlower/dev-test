@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { HelpersService } from '../../sirvices/helpers.service';
+import { HelpersService } from '../../services/helpers.service';
 
 @Component({
   selector: 'element-loading',
@@ -9,7 +9,7 @@ import { HelpersService } from '../../sirvices/helpers.service';
 export class ElementLoadingComponent implements OnInit, OnDestroy {
 
   private progressValue = 0;
-  private intervalSource: number;
+  private intervalSource = -1;
 
   constructor(
     private helpersService: HelpersService
@@ -21,7 +21,7 @@ export class ElementLoadingComponent implements OnInit, OnDestroy {
     // temp: fake progress (implement with Input)
 
     const randomSpeed = this.helpersService.getRandomNumber(125, 175);
-    this.intervalSource = setInterval(() => {
+    this.intervalSource = window.setInterval(() => {
       this.progressValue += this.progressValue >= 100 ? 0 : 5;
     }, randomSpeed);
   }

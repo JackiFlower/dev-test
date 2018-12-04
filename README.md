@@ -1,27 +1,31 @@
-# ScalarrDevTest
+# Front-End Developer Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+## Description
 
-## Development server
+- SPA, basic template, async data loading;
+- Loading to 3 different HTML blocks;
+- Error Handling;
+- Any FE framework;
+- Unit tests as a plus.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Bootstrap
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+git clone git@github.com:vvpanchenko/scalarr-dev-test.git && cd scalarr-dev-test  
+git checkout development  
+npm install  
+```
 
-## Build
+## Start & Development 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Launch: `npm start`    
+Link: `http://localhost:4200/`
 
-## Running unit tests
+## Testing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Lint: `npm run lint`  
+Unit: `npm run test`  
+e2e: `npm run e2e`  
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

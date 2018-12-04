@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { BooksService } from '../../shared/sirvices/books.service';
+import { BooksService } from '../../shared/services/books.service';
 
 @Component({
   selector: 'page-home',

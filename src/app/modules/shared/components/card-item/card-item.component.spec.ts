@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedTestingModule } from '../../../testing/shared-testing.module';
 
 import { CardItemComponent } from './card-item.component';
 
@@ -8,9 +10,11 @@ describe('CardItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardItemComponent ]
+      declarations: [CardItemComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [SharedTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
