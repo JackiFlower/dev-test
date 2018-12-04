@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
-import { ArticlesRoutesModule } from './articles.routes.module';
-import { PageArticlesComponent } from './page-articles/page-articles.component';
+import { BlocksRoutesModule } from './blocks.routes.module';
+import { PageBlocksComponent } from './page-blocks/page-blocks.component';
 
 @NgModule({
   declarations: [
-    PageArticlesComponent
+    PageBlocksComponent
   ],
   imports: [
     SharedModule,
     CommonModule,
-    ArticlesRoutesModule
+    BlocksRoutesModule
   ]
 })
-export class ArticlesModule {
+export class BlocksModule {
 }

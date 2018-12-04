@@ -1,0 +1,11 @@
+<div class="team-player" *ngIf="item">
+
+  <img alt="Thumbnail Image" class="rounded-circle img-fluid img-raised" src="https://randomuser.me/api/portraits/women/{{ item.ID }}.jpg">
+  <h4 class="title">{{ item.Title }}</h4>
+
+  <p class="category text-primary">{{ item.PublishDate | date : 'LLLL dd, y' }}</p>
+  <p class="description">
+    {{ item.Description | slice : 0 : 200 }}
+  </p>
+
+</div>

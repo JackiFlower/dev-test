@@ -7,8 +7,8 @@ export const appRoutes: Routes = [
     loadChildren: './modules/+home/home.module#HomeModule'
   },
   {
-    path: 'articles',
-    loadChildren: './modules/+articles/articles.module#ArticlesModule'
+    path: 'blocks',
+    loadChildren: './modules/+blocks/blocks.module#BlocksModule'
   },
   {
     path: '**',

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageArticlesComponent } from './page-articles/page-articles.component';
+import { PageBlocksComponent } from './page-blocks/page-blocks.component';
 
 const articlesRoutes: Routes = [{
   path: '',
-  component: PageArticlesComponent
+  component: PageBlocksComponent
 }];
 
 @NgModule({
   imports: [RouterModule.forChild(articlesRoutes)],
   exports: [RouterModule]
 })
-export class ArticlesRoutesModule {
+export class BlocksRoutesModule {
 }
