@@ -4,11 +4,11 @@ export const appRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './modules/+home/home.module#HomeModule'
+    loadChildren: './modules/+blocks/blocks.module#BlocksModule'
   },
   {
-    path: 'blocks',
-    loadChildren: './modules/+blocks/blocks.module#BlocksModule'
+    path: 'books',
+    loadChildren: './modules/+books/books.module#BooksModule'
   },
   {
     path: '**',

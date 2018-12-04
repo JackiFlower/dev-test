@@ -1,15 +1,15 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SharedTestingModule } from '../../testing/shared-testing.module';
-import { PageHomeComponent } from './page-home.component';
+import { PageBooksComponent } from './page-books.component';
 
-describe('PageHomeComponent', () => {
-  let component: PageHomeComponent;
-  let fixture: ComponentFixture<PageHomeComponent>;
+describe('PageBooksComponent', () => {
+  let component: PageBooksComponent;
+  let fixture: ComponentFixture<PageBooksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageHomeComponent ],
+      declarations: [ PageBooksComponent ],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [SharedTestingModule]
     })
@@ -17,7 +17,7 @@ describe('PageHomeComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageHomeComponent);
+    fixture = TestBed.createComponent(PageBooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

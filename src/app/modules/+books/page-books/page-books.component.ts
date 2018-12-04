@@ -5,10 +5,10 @@ import { BooksService } from '../../shared/services/books.service';
 
 @Component({
   selector: 'page-home',
-  templateUrl: './page-home.component.html',
-  styleUrls: ['./page-home.component.scss']
+  templateUrl: './page-books.component.html',
+  styleUrls: ['./page-books.component.scss']
 })
-export class PageHomeComponent implements OnInit, OnDestroy {
+export class PageBooksComponent implements OnInit, OnDestroy {
 
   // template
 
