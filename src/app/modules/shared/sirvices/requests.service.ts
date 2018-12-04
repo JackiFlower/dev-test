@@ -18,7 +18,7 @@ export class RequestsService {
 
   getRequest(url: string) {
 
-    const randomResponseDelay = this.helpersService.getRandomNumber(1000, 3000);
+    const randomResponseDelay = this.helpersService.getRandomNumber(1500, 3000);
     const randomHttpStatusCode = this.helpersService.getRandomNumber(400, 527);
 
     let randomResponseStrategy = this.helpersService.getRandomNumber(0, 2);

@@ -1,34 +1,26 @@
-<div *ngIf="!viewContentLoadingError; else content_loading_error">
-  <div *ngIf="!viewContentLoading; else content_loading">
+<div class="section section-team text-center">
+  <div class="container text-center">
 
-    <section-cards
-      [title]="'Books'"
-      [items]="books"
-    ></section-cards>
+    <h2 class="title">Here is our Books</h2>
+    <div class="space-50"></div>
+
+    <div *ngIf="!viewBooksContentLoadingError; else content_loading_error">
+      <div *ngIf="!viewBooksContentLoading; else content_loading">
+
+        <section-cards [items]="books" [size]="'md-3'"></section-cards>
+
+      </div>
+    </div>
 
   </div>
 </div>
 
-<div class="space-50"></div>
-
-
 <!-- templates -->
 
 <ng-template #content_loading>
-  <div class="section section-team text-center">
-    <div class="container">
-      <div class="content_loading">loading ...</div>
-    </div>
-  </div>
+  <element-loading></element-loading>
 </ng-template>
 
 <ng-template #content_loading_error>
-  <div class="section section-team text-center">
-    <div class="container text-center">
-      <p class="text-danger">Error Occurred</p>
-      <button class="btn btn-sm btn-round btn-danger" (click)="loadData()">
-        <i class="fa fa-refresh"></i> Retry
-      </button>
-    </div>
-  </div>
+  <element-error (notifyRetry)="loadBooksData()"></element-error>
 </ng-template>

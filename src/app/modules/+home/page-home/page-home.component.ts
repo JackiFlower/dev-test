@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ArticlesService } from '../../shared/sirvices/articles.service';
 import { BooksService } from '../../shared/sirvices/books.service';
 
 @Component({
@@ -13,13 +12,13 @@ export class PageHomeComponent implements OnInit, OnDestroy {
 
   // template
 
-  viewContentLoading = true;
-  viewContentLoadingError = false;
+  viewBooksContentLoading = true;
+  viewBooksContentLoadingError = false;
 
   // data
 
   books: any[] = [];
-  requestSubscription: Subscription | null = null;
+  booksSubscription: Subscription = new Subscription();
 
   constructor(
     private booksService: BooksService
@@ -27,29 +26,27 @@ export class PageHomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.loadData();
+    this.loadBooksData();
   }
 
   ngOnDestroy() {
-    if (this.requestSubscription) {
-      this.requestSubscription.unsubscribe();
-    }
+    this.booksSubscription.unsubscribe();
   }
 
-  loadData() {
+  loadBooksData() {
 
-    this.viewContentLoading = true;
-    this.viewContentLoadingError = false;
+    this.viewBooksContentLoading = true;
+    this.viewBooksContentLoadingError = false;
 
-    this.requestSubscription = this.booksService.getBooks()
+    this.booksSubscription = this.booksService.getBooks()
       .subscribe((requestData: any[]) => {
 
         this.books = requestData.slice(0, 20);
-        this.viewContentLoading = false;
+        this.viewBooksContentLoading = false;
 
       }, (error: HttpErrorResponse) => {
-        this.viewContentLoadingError = true;
-        console.error(`Handle Error: ${error.status}, ${error.statusText})`, error);
+        this.viewBooksContentLoadingError = true;
+        console.error(`Handle Books Request Error: ${error.status}, ${error.statusText})`, error);
       });
   }
 

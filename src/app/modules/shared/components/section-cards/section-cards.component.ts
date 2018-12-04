@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SectionCardsComponent {
 
-  @Input() title = '';
+  @Input() size = 'md-6';
   @Input() items: any[] = [];
 
 }

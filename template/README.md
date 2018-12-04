@@ -81,8 +81,8 @@ Now Ui Kit Angular
 │   │   │   ├── navigation
 │   │   │   │   ├── navigation.component.html
 │   │   │   │   ├── navigation.component.scss
-│   │   │   │   ├── navigation.component.spec.ts
-│   │   │   │   └── navigation.component.ts
+│   │   │   │   ├── element-navigation.component.spec.ts
+│   │   │   │   └── element-navigation.component.ts
 │   │   │   ├── notification
 │   │   │   │   ├── notification.component.html
 │   │   │   │   ├── notification.component.scss

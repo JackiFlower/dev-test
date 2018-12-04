@@ -1,16 +1,67 @@
-<div class="section">
+<div class="section section-team text-center">
   <div class="container">
 
-    <h3 class="title">Blocks</h3>
+    <h2 class="title">Front-End Developer test</h2>
+    <div class="space-50"></div>
+
     <div class="row">
 
-      <div class="col-md-12">
-        ...content
+      <div class="col-4">
+        <h3 class="title">Books</h3>
+
+        <div *ngIf="!viewBooksContentLoadingError; else content_books_loading_error">
+          <div *ngIf="!viewBooksContentLoading; else content_loading">
+
+            <section-cards [items]="books" [size]="'md-12'"></section-cards>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <h3 class="title">Products</h3>
+
+        <div *ngIf="!viewProductsContentLoadingError; else content_products_loading_error">
+          <div *ngIf="!viewProductsContentLoading; else content_loading">
+
+            <section-cards [items]="products" [size]="'md-12'"></section-cards>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <h3 class="title">Articles</h3>
+
+        <div *ngIf="!viewArticlesContentLoadingError; else content_articles_loading_error">
+          <div *ngIf="!viewArticlesContentLoading; else content_loading">
+
+            <section-cards [items]="articles" [size]="'md-12'"></section-cards>
+
+          </div>
+        </div>
       </div>
 
     </div>
 
-    <div class="space-50"></div>
-
   </div>
 </div>
+
+
+<!-- templates -->
+
+<ng-template #content_loading>
+  <element-loading></element-loading>
+</ng-template>
+
+<ng-template #content_books_loading_error>
+  <element-error (notifyRetry)="loadBooksData()"></element-error>
+</ng-template>
+
+<ng-template #content_products_loading_error>
+  <element-error (notifyRetry)="loadProductsData()"></element-error>
+</ng-template>
+
+<ng-template #content_articles_loading_error>
+  <element-error (notifyRetry)="loadArticlesData()"></element-error>
+</ng-template>
