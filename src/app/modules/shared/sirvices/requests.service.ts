@@ -7,6 +7,9 @@ import { HelpersService } from './helpers.service';
 @Injectable()
 export class RequestsService {
 
+  private tempFirstLoad = true;
+  private tempFailAttempts = 1;
+
   constructor(
     private http: HttpClient,
     private helpersService: HelpersService
@@ -15,9 +18,22 @@ export class RequestsService {
 
   getRequest(url: string) {
 
-    const randomResponseStrategy = this.helpersService.getRandomNumber(0, 2);
     const randomResponseDelay = this.helpersService.getRandomNumber(1000, 3000);
     const randomHttpStatusCode = this.helpersService.getRandomNumber(400, 527);
+
+    let randomResponseStrategy = this.helpersService.getRandomNumber(0, 2);
+
+    // temp: improve random UI
+    if (this.tempFirstLoad) {
+      randomResponseStrategy = 1;
+      this.tempFirstLoad = false;
+    }
+
+    // temp: improve random UI
+    if (this.tempFailAttempts < 0) {
+      randomResponseStrategy = 0;
+      this.tempFailAttempts = 1;
+    }
 
     // temp: fake request states
     switch (randomResponseStrategy) {
@@ -37,6 +53,7 @@ export class RequestsService {
       case 1: {
 
         console.log('Request: Error; Delay: ', randomResponseDelay);
+        this.tempFailAttempts--;
 
         return of(null).pipe(
           delay(randomResponseDelay),
